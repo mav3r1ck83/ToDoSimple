@@ -14,7 +14,6 @@ namespace GreenSlate.Web.SPA.ViewModels
         public string Title { get; set; }
         [Required]
         public int Estimated_Hours { get; set; }
-        [Required]
         public string Created_By { get; set; }
         public bool Completed { get; set; }
     }

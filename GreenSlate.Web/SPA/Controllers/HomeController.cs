@@ -89,6 +89,7 @@ namespace GreenSlate.Web.Controllers
             {
                 ToDoDto toDoDto = new ToDoDto();
                 AutoMapper.Mapper.Map(toDo, toDoDto);
+                toDoDto.Created_By = ViewBag.User;
                 toDoDto = _toDoService.CreateTodo(toDoDto);
             }
             return Json(new[] { toDo }.ToDataSourceResult(request, ModelState));

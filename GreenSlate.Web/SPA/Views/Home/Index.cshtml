@@ -29,6 +29,10 @@
                 .Update(update => update.Action("UpdateToDo", "Home").Data("forgeryToken"))
                 .Model(model => model.Id(p => p.Id))
                 .ServerOperation(true)
+                 .Model(model =>
+    {
+                    model.Field(p => p.Created_By).Editable(false);
+                 })
 
             )
             .Editable(editable => editable.Mode(GridEditMode.PopUp))

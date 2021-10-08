@@ -38,6 +38,10 @@
                         read.Action("GetUsers", "User").Data("forgeryToken");
                     });
                 })
+                .Events(e => e
+                .Select("onSelect"))
+                .Value(ViewBag.User)
+
             )
         </div>
         <div class="container-fluid d-flex justify-content-between p-0">
@@ -70,17 +74,5 @@
             </div>*@
     </footer>
 
-    @*<script>
-            $(document).ready(function () {
-                $("#responsive-panel").kendoResponsivePanel({
-                    breakpoint: 768,
-                    autoClose: false,
-                    orientation: "top"
-                });
-            });
-            function onclick(e) {
-                $("#responsive-panel").getKendoResponsivePanel().toggle();
-            }
-        </script>*@
 </body>
 </html>
