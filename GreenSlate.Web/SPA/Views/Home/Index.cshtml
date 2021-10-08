@@ -1,8 +1,7 @@
 ﻿@using Kendo.Mvc.UI;
 @using GreenSlate.Web.SPA.ViewModels;
+@Html.AntiForgeryToken()
 
-
-@*@{ ViewBag.Title = "Index";}*@
 
 <h2></h2>
 
@@ -25,9 +24,10 @@
             .DataSource(dataSource => dataSource
                 .Ajax()
                 .PageSize(1000)
-                .Create(create => create.Action("CreateToDo", "Home"))
-                .Read(read => read.Action("GetAllToDos", "Home"))
-                .Update(update => update.Action("UpdateToDo", "Home")).Model(model => model.Id(p => p.Id))
+                .Create(create => create.Action("CreateToDo", "Home").Data("forgeryToken"))
+                .Read(read => read.Action("GetAllToDos", "Home").Data("forgeryToken"))
+                .Update(update => update.Action("UpdateToDo", "Home").Data("forgeryToken"))
+                .Model(model => model.Id(p => p.Id))
                 .ServerOperation(true)
 
             )
@@ -42,3 +42,9 @@
         visibility: hidden;
     }
 </style>
+
+<script>
+    function forgeryToken() {
+        return kendo.antiForgeryTokens();
+    }
+</script>

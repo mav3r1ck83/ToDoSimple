@@ -19,6 +19,8 @@ namespace GreenSlate.Web.AutoMapperConfig
             CreateMap<UserDto, User>();
             CreateMap<ToDoDto, ToDoGridViewModel>();
             CreateMap<ToDoGridViewModel, ToDoDto>();
+            CreateMap<UserDto, UsersViewModel>();
+            CreateMap<UsersViewModel, UserDto>();
         }
     }
 }

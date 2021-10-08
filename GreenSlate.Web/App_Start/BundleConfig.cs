@@ -23,7 +23,8 @@ namespace GreenSlate.Web
             "~/3rdParty/lodash.js/lodash.min.js",
             "~/3rdParty/pubsub-js/pubsub.min.js",
             "~/3rdParty/kendo-ui-core/js/kendo.modrnizr.custom.js",
-            "~/SPA/Scripts/GridRowStyling.js"
+            "~/SPA/Scripts/GridRowStyling.js",
+            "~/SPA/Scripts/antiForgeryToken.js"
 
             ));
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(

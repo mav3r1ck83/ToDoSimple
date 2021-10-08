@@ -13,6 +13,10 @@ body {
 .bgGreen{
     background-color: darkseagreen;
 }
+.createdBy{
+    font-size: 15px;
+    color: ghostwhite;
+}
 th [role="listbox"] {
     visibility: hidden;
 }

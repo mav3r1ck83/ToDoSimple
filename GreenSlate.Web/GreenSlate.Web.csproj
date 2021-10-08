@@ -136,7 +136,9 @@
     </Compile>
     <Compile Include="Models\OrderViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPA\Controllers\UserController.cs" />
     <Compile Include="SPA\ViewModels\ToDoGridViewModel.cs" />
+    <Compile Include="SPA\ViewModels\UsersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="3rdParty\bootstrap\css\bootstrap-grid.css" />
@@ -976,6 +978,7 @@
     <Content Include="SPA\App.js" />
     <Content Include="SPA\Global\requireConfig.js" />
     <Content Include="SPA\Router.js" />
+    <Content Include="SPA\Scripts\antiForgeryToken.js" />
     <Content Include="SPA\Scripts\GridRowStyling.js" />
     <Content Include="SPA\Style\Site.css" />
     <Content Include="Web.config" />
@@ -1013,6 +1016,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="SPA\Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />

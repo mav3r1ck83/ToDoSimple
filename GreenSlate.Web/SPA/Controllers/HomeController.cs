@@ -14,13 +14,13 @@ namespace GreenSlate.Web.Controllers
     public class HomeController : Controller
     {
         private readonly ITodoService _toDoService;
-        private readonly IUserService _userService;
+
 
 
         public HomeController(ITodoService toDoService, IUserService userService)
         {
             _toDoService = toDoService;
-            _userService = userService;
+
         }
         public ActionResult Index()
         {
@@ -43,7 +43,7 @@ namespace GreenSlate.Web.Controllers
                 }
             }
         }
-
+        [ValidateAntiForgeryToken]
         public JsonResult GetAllToDos([DataSourceRequest] DataSourceRequest request)
         {
             List<FilterDto> filterDtos = new List<FilterDto>();
@@ -69,6 +69,7 @@ namespace GreenSlate.Web.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public JsonResult UpdateToDo([DataSourceRequest] DataSourceRequest request, ToDoGridViewModel toDo)
         {
             if (toDo != null && ModelState.IsValid)
@@ -81,6 +82,7 @@ namespace GreenSlate.Web.Controllers
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public JsonResult CreateToDo([DataSourceRequest] DataSourceRequest request, ToDoGridViewModel toDo)
         {
             if (toDo != null && ModelState.IsValid)
@@ -91,5 +93,6 @@ namespace GreenSlate.Web.Controllers
             }
             return Json(new[] { toDo }.ToDataSourceResult(request, ModelState));
         }
+
     }
 }
