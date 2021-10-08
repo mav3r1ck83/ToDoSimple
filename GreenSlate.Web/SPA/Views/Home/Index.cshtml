@@ -31,7 +31,7 @@
                 .ServerOperation(true)
                  .Model(model =>
     {
-                    model.Field(p => p.Created_By).Editable(false);
+                    model.Field(p => p.Created_By).Editable(false).DefaultValue(ViewBag.User);
                  })
 
             )
