@@ -1,0 +1,1072 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D0C719D8-755E-4E1F-8C61-0449C3018DFC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GreenSlate.Web</RootNamespace>
+    <AssemblyName>GreenSlate.Web</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.5.0.2, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\lib\KENDOUIMVC\2021.3.914.545.Trial\Kendo.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="RequireJsNet, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RequireJsNet.3.1.0\lib\net45\RequireJsNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.1, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.2\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Unity.Abstractions, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Container, Version=5.11.1.0, Culture=neutral, PublicKeyToken=489b6accfaf20ef0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.5.11.1\lib\net47\Unity.Container.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mvc5, Version=1.4.0.0, Culture=neutral, PublicKeyToken=43da31bc42a85347, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.Mvc5.1.4.0\lib\net45\Unity.Mvc5.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="AutoMapperConfig\AutomapperProfile.cs" />
+    <Compile Include="SPA\Controllers\GridController.cs" />
+    <Compile Include="SPA\Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\OrderViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SPA\ViewModels\ToDoGridViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.min.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.js" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.min.js" />
+    <Content Include="3rdParty\jquery\jquery.js" />
+    <Content Include="3rdParty\jquery\jquery.min.js" />
+    <Content Include="3rdParty\jquery\jquery.slim.js" />
+    <Content Include="3rdParty\jquery\jquery.slim.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.af-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.af.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.am-ET.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.am.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-AE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-BH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-DZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-EG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-IQ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-JO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-KW.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-LB.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-LY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-MA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-OM.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-QA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-SA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-SY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-TN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar-YE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ar.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.arn-CL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.arn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.as-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.as.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.az-Cyrl-AZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.az-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.az-Latn-AZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.az-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.az.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ba-RU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ba.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.be-BY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.be.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bg-BG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bg.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bn-BD.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bn-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bo-CN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bo.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.br-FR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.br.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bs-Cyrl-BA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bs-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bs-Latn-BA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bs-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.bs.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ca-ES.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ca.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.co-FR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.co.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.cs-CZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.cs.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.cy-GB.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.cy.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.da-DK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.da.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de-AT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de-CH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de-DE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de-LI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de-LU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.de.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.dsb-DE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.dsb.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.dv-MV.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.dv.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.el-GR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.el.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-029.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-AU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-BZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-CA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-GB.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-IE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-JM.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-MY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-NZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-PH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-SG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-TT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-US.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en-ZW.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.en.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-AR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-BO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-CL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-CO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-CR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-DO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-EC.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-ES.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-GT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-HN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-MX.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-NI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-PA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-PE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-PR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-PY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-SV.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-US.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-UY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es-VE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.es.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.et-EE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.et.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.eu-ES.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.eu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fa-IR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fa.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fi-FI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fi.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fil-PH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fil.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fo-FO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fo.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-BE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-CA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-CH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-FR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-LU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr-MC.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fy-NL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.fy.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ga-IE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ga.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gd-GB.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gd.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gl-ES.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gsw-FR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gsw.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gu-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.gu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ha-Latn-NG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ha-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ha.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.he-IL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.he.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hi-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hi.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hr-BA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hr-HR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hsb-DE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hsb.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hu-HU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hy-AM.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.hy.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.id-ID.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.id.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ig-NG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ig.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ii-CN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ii.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.is-IS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.is.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.it-CH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.it-IT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.it.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.iu-Cans-CA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.iu-Cans.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.iu-Latn-CA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.iu-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.iu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ja-JP.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ja.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ka-GE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ka.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kk-KZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kk.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kl-GL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.km-KH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.km.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kn-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ko-KR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ko.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kok-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.kok.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ky-KG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ky.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lb-LU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lb.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lo-LA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lo.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lt-LT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lt.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lv-LV.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.lv.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mi-NZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mi.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mk-MK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mk.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ml-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ml.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mn-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mn-MN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mn-Mong-CN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mn-Mong.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.moh-CA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.moh.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mr-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ms-BN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ms-MY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ms.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mt-MT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.mt.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nb-NO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nb.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ne-NP.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ne.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nl-BE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nl-NL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nn-NO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.no.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nso-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.nso.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.oc-FR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.oc.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.or-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.or.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pa-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pa.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pl-PL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.prs-AF.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.prs.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ps-AF.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ps.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pt-BR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pt-PT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.pt.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.qut-GT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.qut.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.quz-BO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.quz-EC.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.quz-PE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.quz.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.rm-CH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.rm.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ro-RO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ro.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ru-RU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ru-UA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ru.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.rw-RW.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.rw.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sa-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sa.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sah-RU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sah.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.se-FI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.se-NO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.se-SE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.se.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.si-LK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.si.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sk-SK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sk.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sl-SI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sma-NO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sma-SE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sma.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.smj-NO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.smj-SE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.smj.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.smn-FI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.smn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sms-FI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sms.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sq-AL.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sq.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Cyrl-BA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Cyrl-CS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Cyrl-ME.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Cyrl-RS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Latn-BA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Latn-CS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Latn-ME.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Latn-RS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sv-FI.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sv-SE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sv.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sw-KE.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.sw.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.syr-SY.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.syr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ta-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ta.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.te-IN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.te.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tg-Cyrl-TJ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tg-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tg.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.th-TH.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.th.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tk-TM.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tk.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tn-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tr-TR.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tt-RU.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tt.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tzm-Latn-DZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tzm-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.tzm.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ug-CN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ug.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uk-UA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uk.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ur-PK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.ur.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uz-Cyrl-UZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uz-Cyrl.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uz-Latn-UZ.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uz-Latn.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.uz.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.vi-VN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.vi.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.wo-SN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.wo.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.xh-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.xh.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.yo-NG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.yo.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-CHS.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-CHT.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-CN.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-Hans.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-Hant.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-HK.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-MO.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-SG.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh-TW.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zh.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zu-ZA.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\cultures\kendo.culture.zu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\jquery.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\jszip.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.all.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.aspnetmvc.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.autocomplete.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.binder.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.button.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.calendar.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.colorpicker.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.combobox.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.core.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.odata.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.signalr.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.xml.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.datepicker.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.datetimepicker.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.draganddrop.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.dropdownlist.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.editable.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.fx.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.list.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.listview.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.maskedtextbox.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.menu.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.actionsheet.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.application.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.button.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.buttongroup.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.drawer.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.listview.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.loader.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.modalview.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.navbar.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.pane.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.popover.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.scroller.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.scrollview.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.shim.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.splitview.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.switch.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.tabstrip.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.view.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.modernizr.custom.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.multiselect.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.notification.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.numerictextbox.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.pager.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.panelbar.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.popup.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.progressbar.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.resizable.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.router.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.selectable.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.slider.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.sortable.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.splitter.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.tabstrip.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.timepicker.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.timezones.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.tooltip.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.touch.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.ui.core.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.userevents.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.validator.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.view.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.window.min.js" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Black\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\BlueOpal\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Bootstrap\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Default\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Flat\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\HighContrast\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.black.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.black.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.blueopal.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.blueopal.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.bootstrap.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.bootstrap.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.common-bootstrap.core.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.common-bootstrap.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.common.core.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.common.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.default.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.default.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.flat.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.flat.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.highcontrast.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.highcontrast.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.metro.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.metro.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.metroblack.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.metroblack.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.moonlight.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.moonlight.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.rtl.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.silver.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.silver.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.uniform.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\kendo.uniform.mobile.min.css" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\MetroBlack\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Metro\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Moonlight\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Silver\sprite_2x.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\brushed-metal.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots1.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots10.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots11.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots12.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots13.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots2.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots3.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots4.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots5.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots6.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots7.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots8.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\dots9.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\glass-lighter.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\glass.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\highlight.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\hsv-gradient.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\hue.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\leather1.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\leather2.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\noise.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe1.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe2.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe3.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe4.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe5.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\stripe6.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\transparency.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\textures\transtexture.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\editor.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\imagebrowser.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\indeterminate.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\loading-image.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\loading.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\loading_2x.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\slider-h.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\slider-v.gif" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\sprite.png" />
+    <Content Include="3rdParty\kendo-ui-core\styles\Uniform\sprite_2x.png" />
+    <Content Include="3rdParty\lodash.js\lodash.core.js" />
+    <Content Include="3rdParty\lodash.js\lodash.core.min.js" />
+    <Content Include="3rdParty\lodash.js\lodash.fp.js" />
+    <Content Include="3rdParty\lodash.js\lodash.fp.min.js" />
+    <Content Include="3rdParty\lodash.js\lodash.js" />
+    <Content Include="3rdParty\lodash.js\lodash.min.js" />
+    <Content Include="3rdParty\lodash.js\mapping.fp.js" />
+    <Content Include="3rdParty\lodash.js\mapping.fp.min.js" />
+    <Content Include="3rdParty\pubsub-js\pubsub.js" />
+    <Content Include="3rdParty\pubsub-js\pubsub.min.js" />
+    <Content Include="3rdParty\require.js\require.js" />
+    <Content Include="3rdParty\require.js\require.min.js" />
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="libman.json" />
+    <Content Include="3rdParty\kendo-ui-core\js\jquery.min.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.autocomplete.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.binder.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.button.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.calendar.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.colorpicker.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.combobox.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.core.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.odata.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.signalr.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.data.xml.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.datepicker.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.datetimepicker.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.draganddrop.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.dropdownlist.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.editable.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.fx.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.list.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.listview.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.maskedtextbox.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.menu.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.actionsheet.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.application.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.button.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.buttongroup.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.drawer.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.listview.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.loader.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.modalview.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.navbar.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.pane.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.popover.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.scroller.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.scrollview.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.shim.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.splitview.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.switch.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.tabstrip.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.mobile.view.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.multiselect.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.notification.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.numerictextbox.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.pager.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.panelbar.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.popup.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.progressbar.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.resizable.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.router.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.selectable.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.slider.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.sortable.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.splitter.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.tabstrip.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.timepicker.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.tooltip.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.touch.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.ui.core.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.userevents.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.validator.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.view.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\js\kendo.window.min.js.map" />
+    <Content Include="3rdParty\kendo-ui-core\styles\images\kendoui.ttf" />
+    <Content Include="3rdParty\kendo-ui-core\styles\images\kendoui.woff" />
+    <Content Include="3rdParty\require.js\require.min.js.map" />
+    <Content Include="3rdParty\jquery\jquery.min.map" />
+    <Content Include="3rdParty\jquery\jquery.slim.min.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="3rdParty\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.js.map" />
+    <Content Include="3rdParty\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="3rdParty\bootstrap\scss\_accordion.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_alert.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_badge.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_breadcrumb.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_button-group.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_buttons.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_card.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_carousel.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_close.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_containers.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_dropdown.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_forms.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_functions.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_grid.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_helpers.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_images.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_list-group.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_mixins.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_modal.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_nav.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_navbar.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_offcanvas.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_pagination.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_placeholders.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_popover.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_progress.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_reboot.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_root.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_spinners.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_tables.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_toasts.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_tooltip.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_transitions.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_type.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_utilities.scss" />
+    <Content Include="3rdParty\bootstrap\scss\_variables.scss" />
+    <Content Include="3rdParty\bootstrap\scss\bootstrap-grid.scss" />
+    <Content Include="3rdParty\bootstrap\scss\bootstrap-reboot.scss" />
+    <Content Include="3rdParty\bootstrap\scss\bootstrap-utilities.scss" />
+    <Content Include="3rdParty\bootstrap\scss\bootstrap.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_floating-labels.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_form-check.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_form-control.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_form-range.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_form-select.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_form-text.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_input-group.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_labels.scss" />
+    <Content Include="3rdParty\bootstrap\scss\forms\_validation.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_clearfix.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_colored-links.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_position.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_ratio.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_stacks.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_stretched-link.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_text-truncation.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_visually-hidden.scss" />
+    <Content Include="3rdParty\bootstrap\scss\helpers\_vr.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_alert.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_backdrop.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_border-radius.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_box-shadow.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_breakpoints.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_buttons.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_caret.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_clearfix.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_color-scheme.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_container.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_deprecate.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_forms.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_gradients.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_grid.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_image.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_list-group.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_lists.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_pagination.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_reset-text.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_resize.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_table-variants.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_text-truncate.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_transition.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_utilities.scss" />
+    <Content Include="3rdParty\bootstrap\scss\mixins\_visually-hidden.scss" />
+    <Content Include="3rdParty\bootstrap\scss\utilities\_api.scss" />
+    <Content Include="3rdParty\bootstrap\scss\vendor\_rfs.scss" />
+    <None Include="packages.config" />
+    <Content Include="Images\200.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\kendo.modernizr.custom.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="SPA\App.js" />
+    <Content Include="SPA\Global\requireConfig.js" />
+    <Content Include="SPA\Router.js" />
+    <Content Include="SPA\Scripts\GridRowStyling.js" />
+    <Content Include="SPA\Style\Site.css" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="SPA\Views\Web.config" />
+    <Content Include="SPA\Views\_ViewStart.cshtml" />
+    <Content Include="SPA\Views\Home\Index.cshtml" />
+    <Content Include="SPA\Views\Shared\_Layout.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Boolean.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Country.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Currency.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Date.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Email.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\GridForeignKey.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Integer.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Number.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Password.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Time.cshtml" />
+    <Content Include="SPA\Views\Shared\EditorTemplates\Url.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Images\accent.png" />
+    <Content Include="Images\bullet.png" />
+    <Content Include="Images\heroAccent.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GreenSlate.Business\GreenSlate.Business.csproj">
+      <Project>{cc62f170-5fc8-468c-b552-9801415ecfbc}</Project>
+      <Name>GreenSlate.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreenSlate.Core\GreenSlate.Core.csproj">
+      <Project>{b61917b8-1f66-46f7-bfee-ed9564530d24}</Project>
+      <Name>GreenSlate.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GreenSlate.Database\GreenSlate.Database.csproj">
+      <Project>{014e9f43-849d-4139-9a63-241f75f1821a}</Project>
+      <Name>GreenSlate.Database</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51878</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51878/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <UserProperties UseCdnSupport="True" />
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

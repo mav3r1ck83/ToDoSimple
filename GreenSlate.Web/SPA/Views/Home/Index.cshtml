@@ -1,0 +1,44 @@
+﻿@using Kendo.Mvc.UI;
+@using GreenSlate.Web.SPA.ViewModels;
+
+
+@*@{ ViewBag.Title = "Index";}*@
+
+<h2></h2>
+
+@(Html.Kendo().Grid<ToDoGridViewModel>()
+            .Name("ToDoGrid")
+            .ToolBar(toolbar => toolbar.Create().Text("Create New Task"))
+            .Columns(columns =>
+            {
+                columns.Command(command => { command.Edit();}).Width(250);
+                columns.Bound(p => p.Completed);
+                columns.Bound(p => p.Title);
+                columns.Bound(p => p.Estimated_Hours).Title("Estimated Hours");
+                columns.Bound(p => p.Created_By).Title("Created By");
+            })
+            .Pageable(page => page.Enabled(false))
+            .Sortable()
+            .Scrollable()
+            .Filterable(filter => filter.Mode(GridFilterMode.Row).Extra(true).Operators(e => e.ForString(a => a.Clear().Contains("Contains"))))
+            .HtmlAttributes(new { style = "height:550px;" })
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .PageSize(1000)
+                .Create(create => create.Action("CreateToDo", "Home"))
+                .Read(read => read.Action("GetAllToDos", "Home"))
+                .Update(update => update.Action("UpdateToDo", "Home")).Model(model => model.Id(p => p.Id))
+                .ServerOperation(true)
+
+            )
+            .Editable(editable => editable.Mode(GridEditMode.PopUp))
+            .Events(e => e.DataBound("onDataBound"))
+
+        )
+
+
+<style>
+    th [role="listbox"] {
+        visibility: hidden;
+    }
+</style>

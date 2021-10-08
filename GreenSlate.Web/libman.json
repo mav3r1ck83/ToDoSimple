@@ -1,0 +1,30 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "kendo-ui-core@2014.1.416",
+      "destination": "3rdParty/kendo-ui-core/"
+    },
+    {
+      "library": "require.js@2.3.6",
+      "destination": "3rdParty/require.js/"
+    },
+    {
+      "library": "jquery@3.6.0",
+      "destination": "3rdParty/jquery/"
+    },
+    {
+      "library": "bootstrap@5.1.2",
+      "destination": "3rdParty/bootstrap/"
+    },
+    {
+      "library": "lodash.js@4.17.21",
+      "destination": "3rdParty/lodash.js/"
+    },
+    {
+      "library": "pubsub-js@1.9.3",
+      "destination": "3rdParty/pubsub-js/"
+    }
+  ]
+}
