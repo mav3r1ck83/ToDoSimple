@@ -5,6 +5,9 @@ using GreenSlate.Database.Interfaces;
 using GreenSlate.Database.Repositories;
 using GreenSlate.Business.Interfaces;
 using GreenSlate.Business.Services;
+using GreenSlate.Business.CacheHelper;
+
+
 namespace GreenSlate.Web
 {
     public static class UnityConfig
@@ -21,6 +24,7 @@ namespace GreenSlate.Web
             container.RegisterType<IToDoRepository, ToDoRepository>();
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IUserService, UserService>();
+            container.RegisterType<IGlobalCachingProvider, GlobalCachingProvider>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

@@ -15,11 +15,17 @@ namespace GreenSlate.Business.Services
     {
 
         private readonly IToDoRepository _toDoRepository;
-        public TodoService(IToDoRepository toDoRepository)
+        private readonly IUserService _userService;
+        public TodoService(IToDoRepository toDoRepository, IUserService userService)
         {
             _toDoRepository = toDoRepository;
+            _userService = userService;
         }
 
+        public ToDoDto GetTodo(int id)
+        {
+            return _toDoRepository.GetToDo(id);
+        }
         public List<ToDoDto> GetToDoes(List<FilterDto> filterDtos)
         {
             List<ToDoDto> toDoes = _toDoRepository.GetToDos().ToList();
@@ -55,6 +61,7 @@ namespace GreenSlate.Business.Services
         }
         public ToDoDto CreateTodo(ToDoDto toDoDto)
         {
+            toDoDto.Created_By = _userService.GetCurrentUserName();
             toDoDto = _toDoRepository.Add(toDoDto);
             return toDoDto;
         }

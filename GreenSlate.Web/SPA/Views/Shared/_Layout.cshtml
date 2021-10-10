@@ -76,9 +76,12 @@
 
     <script>
         function onSelect(e) {
-                debugger
-            ViewBag.User = e.dataItem.User_Name
             debugger
+            $.ajax({
+                type: "POST",
+                url: '/User/UserSelected',
+                data: { User_Name: e.item.text() }
+            })
             }
         </script>
 </body>

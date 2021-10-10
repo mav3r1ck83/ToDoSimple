@@ -8,7 +8,6 @@ namespace GreenSlate.Web.SPA.ViewModels
 {
     public class ToDoGridViewModel
     {
-        [ScaffoldColumn(false)]
         public int Id { get; set; }
         [Required]
         public string Title { get; set; }

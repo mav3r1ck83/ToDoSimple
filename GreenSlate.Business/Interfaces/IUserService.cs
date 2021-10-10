@@ -10,5 +10,7 @@ namespace GreenSlate.Business.Interfaces
     public interface IUserService
     {
         List<UserDto> GetUsers();
+        string GetCurrentUserName();
+        string SetCurrentUser(String userName);
     }
 }

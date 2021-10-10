@@ -28,6 +28,13 @@ namespace GreenSlate.Web.Controllers
 
             return View();
         }
+        public ActionResult Edit(int id)
+        {
+
+            ToDoGridViewModel toDoModel = new ToDoGridViewModel();
+
+            return PartialView(toDoModel);
+        }
 
         private void RecurseFilterDescriptors(IList<Kendo.Mvc.IFilterDescriptor> requestFilters, List<Kendo.Mvc.FilterDescriptor> allFilterDescriptors)
         {

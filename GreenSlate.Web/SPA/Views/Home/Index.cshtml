@@ -24,19 +24,27 @@
             .DataSource(dataSource => dataSource
                 .Ajax()
                 .PageSize(1000)
+                .Model(m  => {                   
+                    m.Id(t => t.Id);
+
+
+                })
                 .Create(create => create.Action("CreateToDo", "Home").Data("forgeryToken"))
                 .Read(read => read.Action("GetAllToDos", "Home").Data("forgeryToken"))
                 .Update(update => update.Action("UpdateToDo", "Home").Data("forgeryToken"))
-                .Model(model => model.Id(p => p.Id))
+                
                 .ServerOperation(true)
                  .Model(model =>
-    {
-                    model.Field(p => p.Created_By).Editable(false).DefaultValue(ViewBag.User);
+                 {
+                     model.Field(p => p.Created_By).Editable(false);
                  })
 
             )
             .Editable(editable => editable.Mode(GridEditMode.PopUp))
             .Events(e => e.DataBound("onDataBound"))
+            .Events(e => e.Edit("onEdit"))
+            .Events(e => e.Save("onGridEdit"))
+
 
         )
 
@@ -51,4 +59,20 @@
     function forgeryToken() {
         return kendo.antiForgeryTokens();
     }
+</script>
+
+<script type="text/javascript">
+
+    function onEdit(e) {
+        debugger
+        $('[name="Id"]').attr("readonly", true);
+        $('[name="Created_By"]').attr("readonly", true);
+    }
+
+    function onGridEdit(e) {
+        e.sender.one("dataBound", function (e) {
+            e.sender.dataSource.read();
+        });
+    }
+
 </script>

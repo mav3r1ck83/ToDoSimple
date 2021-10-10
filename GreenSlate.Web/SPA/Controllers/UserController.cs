@@ -10,6 +10,9 @@ using GreenSlate.Web.SPA.ViewModels;
 using Kendo.Mvc.UI;
 using Kendo.Mvc.Extensions;
 
+
+
+
 namespace GreenSlate.Web.SPA.Controllers
 {
     public class UserController : Controller
@@ -30,10 +33,18 @@ namespace GreenSlate.Web.SPA.Controllers
         }
         public JsonResult GetUsers([DataSourceRequest] DataSourceRequest request)
         {
+        
             List<UserDto> usersDto = _userService.GetUsers();
             List <UsersViewModel> users= new List<UsersViewModel>();
             AutoMapper.Mapper.Map(usersDto, users);
             return Json(users, JsonRequestBehavior.AllowGet);
+        }
+        [HttpPost]
+        public UsersViewModel UserSelected(UsersViewModel user)
+        {
+
+            var b = _userService.SetCurrentUser(user.User_Name);
+            return user;
         }
     }
 }

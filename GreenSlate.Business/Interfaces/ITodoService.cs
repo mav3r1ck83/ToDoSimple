@@ -9,6 +9,7 @@ namespace GreenSlate.Business.Interfaces
 {
     public interface ITodoService
     {
+        ToDoDto GetTodo(int id);
         List<ToDoDto> GetToDoes(List<FilterDto> filterDtos);
         ToDoDto UpdateToDo(ToDoDto toDoDto);
         ToDoDto CreateTodo(ToDoDto toDoDto);
