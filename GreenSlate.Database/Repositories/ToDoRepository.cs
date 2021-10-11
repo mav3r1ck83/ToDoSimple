@@ -44,9 +44,16 @@ namespace GreenSlate.Database.Repositories
             return toDoDto;
         }
 
-        public List<ToDoDto> GetToDos()
+        public List<ToDoDto> GetToDos(List<FilterDto> filterDtos = null)
         {
-            List<ToDo> toDos = context.ToDoes.ToList();
+            List<ToDo> toDos = new List<ToDo>();
+            if (filterDtos != null && filterDtos.Any())
+            {
+                toDos = getFilteredToDos(filterDtos);
+            } else
+            {
+                toDos = context.ToDoes.ToList();
+            }
             List<ToDoDto> toDoDtos = new List<ToDoDto>();
             AutoMapper.Mapper.Map(toDos, toDoDtos);
             return toDoDtos;
@@ -61,6 +68,60 @@ namespace GreenSlate.Database.Repositories
             ToDoDto toDoDto = new ToDoDto();
             AutoMapper.Mapper.Map(updateTodo, toDoDto);
             return toDoDto;
+        }
+
+        private List<ToDo> getFilteredToDos(List<FilterDto> filterDtos)
+        {
+            List<ToDo> toDos = new List<ToDo>();
+            string filter = "";
+            for (int i = 0; i < filterDtos.Count(); i++)
+            {
+                filter = filterDtos[i].Filter.ToString().ToLower();
+                if (i == 0)
+                {
+                    switch (filterDtos[i].Column)
+                    {
+                        case "Title":
+                            toDos = context.ToDoes.Where(e => e.Title.ToLower().Contains(filter)).ToList();
+                            break;
+                        case "Estimated_Hours":
+                            toDos = context.ToDoes.Where(e => e.ToString().Contains(filter)).ToList();
+                            break;
+                        case "Created_By":
+                            toDos = context.ToDoes.Where(e => e.Created_By.ToLower().Contains(filter)).ToList();
+                            break;
+                        case "Completed":
+                            toDos = context.ToDoes.Where(e => e.Completed.ToString().Equals(filter)).ToList();
+                            break;
+                        default: break;
+
+                    }
+
+                }
+                else
+                {
+                    switch (filterDtos[i].Column)
+                    {
+                        case "Title":
+                            toDos = toDos.Where(e => e.Title.ToLower().Contains(filter)).ToList();
+                            break;
+                        case "Estimated_Hours":
+                            toDos = toDos.Where(e => e.ToString().Contains(filter)).ToList();
+                            break;
+                        case "Created_By":
+                            toDos = toDos.Where(e => e.Created_By.ToLower().Contains(filter)).ToList();
+                            break;
+                        case "Completed":
+                            toDos = toDos.Where(e => e.Completed.ToString().Equals(filter)).ToList();
+                            break;
+                        default: break;
+
+                    }
+
+                }
+            }
+            return toDos;
+
         }
     }
 }

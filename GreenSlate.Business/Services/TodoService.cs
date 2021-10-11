@@ -28,29 +28,7 @@ namespace GreenSlate.Business.Services
         }
         public List<ToDoDto> GetToDoes(List<FilterDto> filterDtos)
         {
-            List<ToDoDto> toDoes = _toDoRepository.GetToDos().ToList();
-            if (filterDtos != null && filterDtos.Any())
-            {
-                foreach(FilterDto filter in filterDtos)
-                {
-                    switch (filter.Column)
-                    {
-                        case "Title": 
-                            toDoes = toDoes.Where(e => e.Title.ToLower().Contains(filter.Filter.ToLower())).ToList();
-                            break;
-                        case "Estimated_Hours": 
-                            toDoes = toDoes.Where(e => e.ToString().Contains(filter.Filter.ToString())).ToList();
-                            break;
-                        case "Created_By":
-                            toDoes = toDoes.Where(e => e.Created_By.ToLower().Contains(filter.Filter.ToLower())).ToList();
-                            break;
-                        case "Completed":
-                            toDoes = toDoes.Where(e => e.Completed.ToString().Equals(filter.Filter.ToString())).ToList();
-                            break;
-                        default: break;
-                    }
-                }
-            }
+            List<ToDoDto> toDoes = _toDoRepository.GetToDos(filterDtos).ToList();
             return toDoes;
         }
 

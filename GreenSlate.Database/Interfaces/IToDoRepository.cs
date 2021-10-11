@@ -10,7 +10,7 @@ namespace GreenSlate.Database.Interfaces
     public interface IToDoRepository
     {
         ToDoDto GetToDo(int Id);
-        List<ToDoDto> GetToDos();
+        List<ToDoDto> GetToDos(List<FilterDto> filterDtos = null);
         ToDoDto Add(ToDoDto toDo);
         ToDoDto Update(ToDoDto ToDoChanges);
         ToDoDto Delete(int id);
