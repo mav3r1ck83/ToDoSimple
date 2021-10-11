@@ -62,16 +62,13 @@
 
 <script type="text/javascript">
 
-    function onEdit(e) {
-        debugger
-        $('[name="Id"]').attr("readonly", true);
-        $('[name="Created_By"]').attr("readonly", true);
-    }
+            require['requireConfig'], function () {
+                $(document).ready(function () {
+                    requirejs["gridStyle"]
+                })
+            }
 
-    function onGridEdit(e) {
-        e.sender.one("dataBound", function (e) {
-            e.sender.dataSource.read();
-        });
-    }
+
+
 
 </script>

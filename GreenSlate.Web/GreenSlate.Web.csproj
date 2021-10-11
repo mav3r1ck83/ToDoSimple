@@ -968,6 +968,8 @@
     <Content Include="SPA\Router.js" />
     <Content Include="SPA\Scripts\antiForgeryToken.js" />
     <Content Include="SPA\Scripts\GridRowStyling.js" />
+    <Content Include="SPA\Scripts\GridScripts.js" />
+    <Content Include="SPA\Scripts\UserSelectScript.js" />
     <Content Include="SPA\Style\Site.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

@@ -48,16 +48,6 @@
     </main>
 
 
-    <script>
-        function onSelect(e) {
-            debugger
-            $.ajax({
-                type: "POST",
-                url: '/User/UserSelected',
-                data: { User_Name: e.item.text() }
-            })
-            }
-        </script>
     <script data-main= "/SPA/Global/requireConfig" src="/3rdParty/require.js/require.js"></script>
     <script>require(['requireConfig'], function () {
             $(document).ready(function () {
