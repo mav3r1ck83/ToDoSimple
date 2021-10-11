@@ -24,6 +24,7 @@
             .DataSource(dataSource => dataSource
                 .Ajax()
                 .PageSize(1000)
+                .Events(e => e.Error("grid_error"))
                 .Model(m  => {                   
                     m.Id(t => t.Id);
 

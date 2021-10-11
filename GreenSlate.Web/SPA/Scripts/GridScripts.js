@@ -20,3 +20,16 @@ function onGridEdit(e) {
         e.sender.dataSource.read();
     });
 }
+
+function grid_error(e) {
+    console.log(e)
+    debugger
+    if (e.errorThrown) {
+        var message = "Error During RunTime:\n" + e.errorThrown;
+        alert(message);
+
+        e.sender.one("dataBound", function (e) {
+            e.sender.dataSource.read();
+        });
+    }
+}

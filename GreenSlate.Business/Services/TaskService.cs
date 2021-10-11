@@ -24,23 +24,53 @@ namespace GreenSlate.Business.Services
 
         public ToDoDto GetTodo(int id)
         {
-            return _toDoRepository.GetToDo(id);
+            ToDoDto toDo = new ToDoDto();
+            try
+            {
+                 toDo = _toDoRepository.GetToDo(id);
+            } catch(Exception exception)
+            {
+                toDo.Title = "ToDoNotFound";
+            }
+            return toDo;
         }
         public List<ToDoDto> GetToDoes(List<FilterDto> filterDtos)
         {
-            List<ToDoDto> toDoes = _toDoRepository.GetToDos(filterDtos).ToList();
+            List<ToDoDto> toDoes = new List<ToDoDto>();
+            try
+            {
+                toDoes = _toDoRepository.GetToDos(filterDtos).ToList();
+            }
+            catch(Exception exception)
+            {
+                throw (exception);
+            }
             return toDoes;
         }
 
         public ToDoDto UpdateToDo(ToDoDto toDoDto)
         {
-            toDoDto = _toDoRepository.Update(toDoDto);
+            try
+            {
+                toDoDto = _toDoRepository.Update(toDoDto);
+            } 
+            catch(Exception exception)
+            {
+                throw (exception);
+            }
             return toDoDto;
         }
         public ToDoDto CreateTodo(ToDoDto toDoDto)
         {
-            toDoDto.Created_By = _userService.GetCurrentUserName();
-            toDoDto = _toDoRepository.Add(toDoDto);
+            try
+            {
+                toDoDto.Created_By = _userService.GetCurrentUserName();
+                toDoDto = _toDoRepository.Add(toDoDto);
+            } 
+            catch(Exception exception)
+            {
+                throw (exception);
+            }
             return toDoDto;
         }
 

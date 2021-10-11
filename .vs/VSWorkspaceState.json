@@ -1,7 +1,12 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\GreenSlate.Database",
+    "\\GreenSlate.Database\\Repositories",
+    "\\GreenSlate.Web",
+    "\\GreenSlate.Web\\3rdParty",
+    "\\GreenSlate.Web\\3rdParty\\require.js"
   ],
-  "SelectedNode": "\\GreenSlate.Web.sln",
+  "SelectedNode": "\\GreenSlate.Database\\Repositories\\ToDoRepository.cs",
   "PreviewInSolutionExplorer": false
 }
