@@ -18,7 +18,7 @@ namespace GreenSlate.Web
             "~/3rdParty/kendo-ui-core/js/jszip.min.js",
             "~/3rdParty/kendo-ui-core/js/kendo.all.min.js",
             "~/3rdParty/kendo-ui-core/js/kendo.aspnetmvc.min.js",
-            "~/3rdParty/requiree.js/require.min.js",
+            //"~/3rdParty/require.js/require.js",
             "~/3rdParty/bootstrap/js/bootstrap.min.js",
             "~/3rdParty/lodash.js/lodash.min.js",
             "~/3rdParty/pubsub-js/pubsub.min.js",

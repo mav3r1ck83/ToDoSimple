@@ -1,5 +1,5 @@
 ﻿requirejs.config({
-    baseUrl: resolveUrl("~/App"),
+    baseUrl:'SPA/',
     paths: {
         "app": "App",
         "router": "Router",
