@@ -13,11 +13,11 @@ namespace GreenSlate.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ITodoService _toDoService;
+        private readonly ITaskService _toDoService;
 
 
 
-        public HomeController(ITodoService toDoService, IUserService userService)
+        public HomeController(ITaskService toDoService, IUserService userService)
         {
             _toDoService = toDoService;
 

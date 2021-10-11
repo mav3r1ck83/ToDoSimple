@@ -11,12 +11,12 @@ using GreenSlate.Database.Interfaces;
 namespace GreenSlate.Business.Services
 {
 
-    public class TodoService : ITodoService
+    public class TaskService : ITaskService
     {
 
         private readonly IToDoRepository _toDoRepository;
         private readonly IUserService _userService;
-        public TodoService(IToDoRepository toDoRepository, IUserService userService)
+        public TaskService(IToDoRepository toDoRepository, IUserService userService)
         {
             _toDoRepository = toDoRepository;
             _userService = userService;

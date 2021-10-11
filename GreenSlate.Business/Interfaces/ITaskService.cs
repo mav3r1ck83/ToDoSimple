@@ -7,7 +7,7 @@ using GreenSlate.Core.DTO;
 
 namespace GreenSlate.Business.Interfaces
 {
-    public interface ITodoService
+    public interface ITaskService
     {
         ToDoDto GetTodo(int id);
         List<ToDoDto> GetToDoes(List<FilterDto> filterDtos);

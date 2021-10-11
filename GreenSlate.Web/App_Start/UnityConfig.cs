@@ -20,7 +20,7 @@ namespace GreenSlate.Web
             // it is NOT necessary to register your controllers
 
             // e.g. container.RegisterType<ITestService, TestService>();
-            container.RegisterType<ITodoService, TodoService>();
+            container.RegisterType<ITaskService, TaskService>();
             container.RegisterType<IToDoRepository, ToDoRepository>();
             container.RegisterType<IUserRepository, UserRepository>();
             container.RegisterType<IUserService, UserService>();
